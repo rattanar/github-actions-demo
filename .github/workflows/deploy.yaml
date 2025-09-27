@@ -32,9 +32,9 @@ jobs:
       needs: build
       steps:
         - name: download-artifact
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: dist-artifact
-            path: dist/ 
+            path: ./dist 
         - name: Deploy to xxx
           run: echo "Deploying to xxx"
