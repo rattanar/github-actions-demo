@@ -8,10 +8,17 @@ on:
   pull_request:
     types:
       - opened
+#env: 
+# APP_VERSION: 1.0.0
+
 jobs:
   build:
       runs-on: ubuntu-latest
       steps:
+        - name: Echo app version 
+          run: echo "App version is ${{ vars.APP_VERSION }}"
+        - name: Print API KEY 
+          run: echo "API KEY is ${{ secrets.API_KEY }}"
         - name: Checkout code
           uses: actions/checkout@v5
         - name: Setup Node.js
