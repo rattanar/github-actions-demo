@@ -19,6 +19,8 @@ jobs:
   build:
     name: Build Project
     runs-on: ubuntu-latest
+    container:
+      image: node:22
     steps:
       - name: Echo env hello text
         run: |
@@ -28,10 +30,10 @@ jobs:
           echo "Secret API Key: ${{ secrets.API_KEY }}"
       - name: Checkout code
         uses: actions/checkout@v5
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: 22
+#     - name: Setup Node.js
+#      uses: actions/setup-node@v5
+#      with:
+#       node-version: 22
       - name: Get npm cache directory
         id: npm-cache-dir
         run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
