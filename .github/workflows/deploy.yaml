@@ -106,7 +106,7 @@ jobs:
   notify_fail:
     name: Notify on Failure
     runs-on: ubuntu-latest
-    needs: [build, prepare, deploy, simulate_fail]
+    needs: [build, prepare, deploy]
     if: always()
     steps:
       - name: Discord notification
