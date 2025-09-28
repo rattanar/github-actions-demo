@@ -1,0 +1,8 @@
+services:
+  web:
+    image: neunghaha/github_actions_demo:v1.0.0
+    container_name: github_actions_demo
+    ports:
+      - "3000:3000"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
