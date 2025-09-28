@@ -9,6 +9,14 @@ jobs:
       matrix:
         node: [16, 18, 20, 22]
         browser: [chrome, firefox, safari]
+        exclude:
+          - node: 16
+            browser: safari
+          - node: 16
+            browser: firefox
+        include:
+          - node: 22
+            browser: edge
     steps:
       - name: Print Node Version and Browser
         run: echo "${{matrix.node}} - ${{matrix.browser}}"
